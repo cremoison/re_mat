@@ -1,0 +1,9 @@
+{
+    "name": "akagami/re_mat",
+    "autoload": {
+        "psr-4": {
+            "Akagami\\ReMat\\": "src/"
+        }
+    },
+    "require": {}
+}
