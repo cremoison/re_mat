@@ -30,8 +30,22 @@ class Repository {
          * I todo segnali con la chiocciola @todo così l'editor te li evidenzia e ti avvisa prima di committare
          * 
          * 
-         * fammi sapere se hai bisogno di aiuto, non c'è niente di male nel chiedere a chi ha più know how (parte fondamentale di questo lavoro)
-         * - egi
+         * Fammi sapere se hai bisogno di aiuto
+         * 
+         * Imparare cosa, come e quando chiedere aiuto o informazioni è una componente fondamentale di questo lavoro quindi
+         * ti conviene abituarti a farlo sia per formazione che per pace mentale
+         * 
+         * Con questo progetto, per aiutarti a entrare più in fretta nelle dinamiche di scrittura di codice enterprise,
+         * simuliamo una dinamica project manager / impiegato. Tratta questi commenti che ti lascio e le issue che ti
+         * apro su github (anche in futuro ovviamente) come se fossero parte del processo di code review in ditta, ovvero
+         * discutiamone quando necessario, chiedi chiarimenti quando non hai capito cosa è che ti viene contraddetto,
+         * se chi ti ha aperto issue ha evidentemente ragione (es. errori di distrazione o di logica) fai e basta ciò che
+         * viene consigliato ma quando non sei d'accordo non avere paura di farlo sapere, sia ai tuoi pari che ai tuoi
+         * superiori (in generale)
+         * 
+         * In bocca al lupo e in culo alla balena
+         * 
+         * - Egi
          */
 
 
