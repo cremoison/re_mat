@@ -12,28 +12,32 @@ class Repository {
         /**
          * @todo
          * 
-         * ========== ESERCIZI PER CASA ==========
+         * ========== ESERCIZI PER CASA (in ordine di priorità) ==========
          *
-         * Rifattorizza per usare .env
+         * Non istanziare una nuova connessione ogni volta che viene fatta una query (lento e poco sicuro), o la
+         * istanzi nel costruttore o la istanzi all'esterno della classe per poi passarla all'istanza individuale di
+         * Repository tramite il costruttore
          * 
-         * Non istanziare ogni volta una nuova connessione (lento e poco sicuro), piuttosto passa un'istanza di PDO
-         * al costruttore oppure istanzia PDO direttamente nel costruttore e sempre lì runni la connessione così
-         * approfitti dei vantaggi dell'approccio a oggetti poi se non hai capito bene cosa intendo ti do una mano
+         * Rifattorizza per usare .env al posto delle variabili per la connessione al db
          * 
-         * Come conseguenza di usare PDO: impara cos'è il binding dei valori nelle query (serve a prevenire SQL injection)
+         * Rifattorizza per usare PDO al posto di mysqli 
          * 
+         * Aggiungi la visibilità ai metodi, i return type, i tipi delle proprietà delle classi, i tipi dei
+         * parametri dei metodi ecc ecc
          * 
-         * ========== APPUNTI VARI ==========
+         * Come conseguenza di usare PDO: impara cos'è il binding nelle query con PDO (serve a prevenire SQL injection)
          * 
-         * Non usare mysqli ma PDO (migliore e più sicuro)
+         * Per queste modifiche indicate parti da questo stesso branch e fai quello che c'è da fare. Quando leggerai questo
+         * mi avrai già dato i permessi di scrittura per la repo quindi potremo guardare direttamente sulla PR le modifiche
+         * che avrai fatto comparando questo commit attuale con ciò che avrai fatto tu
          * 
-         * I todo segnali con la chiocciola @todo così l'editor te li evidenzia e ti avvisa prima di committare
+         * ========== NOTE VARIE ==========
          * 
+         * I todo segnali con la chiocciola @todo (invece di TO-DO) così l'editor te li evidenzia e ti avvisa prima di committare
+         * Lasciare commenti con la chiocciola ha certe implicazioni in diversi casi (si chiamano PHPdocs o docblocks, poi te li spiego)
          * 
-         * Fammi sapere se hai bisogno di aiuto
-         * 
-         * Imparare cosa, come e quando chiedere aiuto o informazioni è una componente fondamentale di questo lavoro quindi
-         * ti conviene abituarti a farlo sia per formazione che per pace mentale
+         * Fammi sapere se hai bisogno di aiuto: imparare cosa, come e quando chiedere aiuto o informazioni è una componente
+         * fondamentale di questo lavoro quindi ti conviene abituarti a farlo sia per formazione tecnica che per pace mentale
          * 
          * Con questo progetto, per aiutarti a entrare più in fretta nelle dinamiche di scrittura di codice enterprise,
          * simuliamo una dinamica project manager / impiegato. Tratta questi commenti che ti lascio e le issue che ti
@@ -41,7 +45,7 @@ class Repository {
          * discutiamone quando necessario, chiedi chiarimenti quando non hai capito cosa è che ti viene contraddetto,
          * se chi ti ha aperto issue ha evidentemente ragione (es. errori di distrazione o di logica) fai e basta ciò che
          * viene consigliato ma quando non sei d'accordo non avere paura di farlo sapere, sia ai tuoi pari che ai tuoi
-         * superiori (in generale)
+         * superiori (in generale). Questa roba serve anche ad aiutarti a capire se e quanto ti può piacere fare questo lavoro.
          * 
          * In bocca al lupo e in culo alla balena
          * 
