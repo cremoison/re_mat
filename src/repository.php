@@ -1,5 +1,5 @@
 <?php
-
+require_once './vendor/autoload.php';
 class Repository {
 
     private $db;
@@ -9,7 +9,7 @@ class Repository {
     }
 
     function query($q) {
-        
+
     }
 
 }
