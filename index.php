@@ -14,3 +14,5 @@ dump($_SERVER["EGIDIO"]);
 
 // :: static -> not-static
 $repo = new Repository(Database::get());
+
+$allUsers = $repo->getAllUsers();
