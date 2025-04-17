@@ -1,5 +1,7 @@
 <?php
+require_once __DIR__ . 'vendor/autoload.php';
 
-include "./vendor/autoload.php";
+$repo = new Repository($db);
+dump($repo);
 
-dump("prova");
+?>
