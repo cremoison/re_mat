@@ -4,11 +4,11 @@ class Repository {
 
     private $db;
 
-    function __constructor($db){
+    public function __constructor($db){
         $this->db = $db;
     }
 
-    function query($q) {
+    public function query($q) {
         // using mysqli object-oriented
         $conn = new mysqli($servername, $username, $password);
         if ($conn->connect_error) {
