@@ -1,13 +1,16 @@
 <?php
-require_once __DIR__ . 'vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 use Dotenv\Dotenv;
+use Src\Database;
+use Src\Repository;
+use PDO;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+// $repo = new Repository($db);
+dump($_SERVER["EGIDIO"]);
 
 
-$repo = new Repository($db);
-
-
-
+// :: static -> not-static
+$repo = new Repository(Database::get());

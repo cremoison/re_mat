@@ -1,14 +1,20 @@
 <?php
-require_once './vendor/autoload.php';
-class Repository {
+// require_once './vendor/autoload.php';
 
-    private $db;
+namespace Src;
+use PDO;
+use Src\DataObjects\User;
 
-    public function __construct($db){
+class Repository
+{
+    private PDO $db;
+    public function __construct(PDO $db)
+    {
         $this->db = $db;
     }
 
-    public function query($q) {
+    public function query($q): array
+    {
         /**
          * @todo
          * 
@@ -53,17 +59,12 @@ class Repository {
          */
 
 
-        // using mysqli object-oriented
+        // @TODO PDO implementation
+    }
 
-        $conn = new mysqli($servername, $username, $password);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        echo "Connected successfully to database.";
-        $result = $conn->query($q);
-        if($result->num_rows > 0) {  // so if the query result in a not-empty filtered selection ...
-            return $result; // @TODO return the result of the query as a self-made array and not the whole object
-        }
+    public function getUserById(int $id): User
+    {
+
     }
 
 }
