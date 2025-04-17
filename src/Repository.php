@@ -4,11 +4,11 @@ class Repository {
 
     private $db;
 
-    function __construct($db){
+    public function __construct($db){
         $this->db = $db;
     }
 
-    function query($q) {
+    public function query($q) {
         /**
          * @todo
          * 
