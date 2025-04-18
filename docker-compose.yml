@@ -9,3 +9,15 @@ services:
       - .:/var/www/html
     environment:
       COMPOSER_ALLOW_SUPERUSER: 1
+    depends_on:
+      - db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root

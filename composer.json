@@ -2,10 +2,11 @@
     "name": "akagami/re_mat",
     "autoload": {
         "psr-4": {
-            "Akagami\\ReMat\\": "src/"
+            "Src\\": "src/"
         }
     },
     "require": {
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "symfony/var-dumper": "^7.2"
     }
 }
