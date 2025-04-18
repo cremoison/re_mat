@@ -9,6 +9,8 @@ services:
       - .:/var/www/html
     environment:
       COMPOSER_ALLOW_SUPERUSER: 1
+    depends_on:
+      - db
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:

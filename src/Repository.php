@@ -3,6 +3,7 @@
 
 namespace Src;
 use PDO;
+use Throwable;
 use Src\DataObjects\User;
 
 class Repository
@@ -15,16 +16,15 @@ class Repository
 
     public function query(string $q): array
     {
-        /**
-         * @todo
-         * 
-         * implementare in questo metodo una query al db
-         * l'obiettivo è chiamare questo metodo così: $this->query('SELECT * FROM ecc. ecc.') o simili
-         * e returna il risultato della query
-         * 
-         * indizio: PDO_FETCH_ASSOC
-         * 
-         */
+        try {
+            //$this->db->query($q);
+            $stmt = $this->db->prepare($q);
+            $res = $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Throwable $e) {
+            die("Can't connect to database");
+        }
+
     }
 
     public function getUserById(int $id): User
@@ -40,7 +40,7 @@ class Repository
          * 
          * return new User($data['email'] ecc ecc)
          * 
-         */
+         *
     }
 
     /**

@@ -5,7 +5,7 @@ namespace Src\DataObjects;
 
 class User
 {
-
+    
     public string $usertype;
     public int $id;
     public string $email;

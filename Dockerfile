@@ -2,7 +2,7 @@ FROM php:8.4-apache
 
 # Enable Apache rewrite module
 RUN a2enmod rewrite
-
+RUN docker-php-ext-install pdo pdo_mysql
 # Install dependencies
 RUN apt-get update && apt-get install -y curl bash unzip git
 
