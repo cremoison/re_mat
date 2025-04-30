@@ -11,4 +11,5 @@ $dotenv->load();
 // $repo = new Repository($db);
 
 $repo = new Repository(Database::get());
-dump($repo->query('SELECT * FROM users'));
+$test = $repo->getUserById(2);
+dump($test);

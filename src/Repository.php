@@ -22,39 +22,32 @@ class Repository
             $res = $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Throwable $e) {
-            die("Can't connect to database");
+            die($e->getMessage());
         }
 
     }
 
     public function getUserById(int $id): User
     {
-        /**
-         * @todo
-         * 
-         * in questo metodo implementare il fetch di un utente in base all'id
-         * e returnare l'oggetto di un utente
-         * 
-         * avrai una roba del tipo:
-         * $data = $this->query('SELECT * FROM ecc ecc')
-         * 
-         * return new User($data['email'] ecc ecc)
-         * 
-         *
+        $q = "SELECT * FROM users WHERE uid = $id";
+        $res = $this->query($q)[0];
+        return User::createByQuery($res);
     }
+
 
     /**
      * @return User[]
      */
     public function getAllUsers(): array
     {
-        /**
-         * @todo
-         * 
-         * esercizio senza indizi: implementa un metodo che restituisce
-         * un array con tutti gli utenti del sito presenti a db
-         * 
-         */
+        $q = "SELECT * FROM USERS";
+        $res = $this->query($q);
+        $arr_users = [];
+
+        foreach ($res as $row) {
+            $arr_users[] = User::createByQuery($row);
+        }
+        return $arr_users;
     }
 
 }
