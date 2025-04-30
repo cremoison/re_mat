@@ -10,7 +10,15 @@ $dotenv->load();
 Router::handle($_SERVER);
 
 /**
- * @todo COMPITI PER CASA
+ * @todo COMPITI PER CASA in ordine di importanza
+ * 
+ * - Refactoring del Router:
+ *      - trasforma il metodo Router::handle() da statico a non statico
+ *              (giusto che si debba istanziare Router: potrebbe aver bisogno di impostazioni / dipendenze varie)
+ *      - crea metodo protetto non statico requireView(string $fileName) che includa il file costruendo il path
+ *          devi poterlo chiamare così: case '/example': $this->requireView('example_view'); break;
+ * 
+ *      nota: in seguito espanderemo Router per poter gestire meglio file di logica come logger.php
  * 
  * - Implementa pagina di registrazione funzionante
  *      aggiungi metodo ->saveUser dentro classe Repository.
