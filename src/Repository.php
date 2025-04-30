@@ -14,12 +14,17 @@ class Repository
         $this->db = $db;
     }
 
-    public function query(string $q): array
+    public function query(string $q, array $binds = []): array
     {
         try {
             //$this->db->query($q);
             $stmt = $this->db->prepare($q);
-            $res = $stmt->execute();
+            if (!empty($binds)) {
+                foreach ($binds as $key => $value) {
+                    $stmt->bindParam($key, $value);
+                }
+            }
+            $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (Throwable $e) {
             die($e->getMessage());
@@ -40,7 +45,7 @@ class Repository
      */
     public function getAllUsers(): array
     {
-        $q = "SELECT * FROM USERS";
+        $q = "SELECT * FROM users";
         $res = $this->query($q);
         $arr_users = [];
 
@@ -48,6 +53,19 @@ class Repository
             $arr_users[] = User::createByQuery($row);
         }
         return $arr_users;
+    }
+
+    public function validate(string $email, string $password): ?User
+    {
+        $binds = [":email" => $email];
+        $q = "SELECT * FROM users WHERE email=:email";
+        $res = $this->query($q, $binds);
+        if (!empty($res)) {
+            $data = $res[0];
+            if ($data["password"] == $password)
+                return User::createByQuery($data);
+        }
+        return null;
     }
 
 }
